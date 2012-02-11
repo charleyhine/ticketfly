@@ -26,7 +26,8 @@ Gem::Specification.new do |s|
     "VERSION",
     "lib/ticketfly.rb",
     "test/helper.rb",
-    "test/test_ticketfly.rb"
+    "test/test_ticketfly.rb",
+    "ticketfly.gemspec"
   ]
   s.homepage = "http://github.com/charleyhine/ticketfly"
   s.licenses = ["MIT"]
