@@ -17,8 +17,8 @@ Jeweler::Tasks.new do |gem|
   gem.name = "ticketfly"
   gem.homepage = "http://github.com/charleyhine/ticketfly"
   gem.license = "MIT"
-  gem.summary = "Summary here"
-  gem.description = "Description here"
+  gem.summary = "A ruby implementation of the Ticketfly event and venue API."
+  gem.description = "A ruby implementation of the Ticketfly event and venue API."
   gem.email = "charles.hine@gmail.com"
   gem.authors = ["Charley Hine"]
   # dependencies defined in Gemfile

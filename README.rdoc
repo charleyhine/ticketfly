@@ -1,6 +1,6 @@
 = ticketfly
 
-Description goes here.
+A ruby implementation of the Ticketfly event and venue API.
 
 == Contributing to ticketfly
  
