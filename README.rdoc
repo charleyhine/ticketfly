@@ -3,6 +3,7 @@
 A ruby implementation of the Ticketfly event and venue API.
 
 == simple consumption
+gem 'ticketfly'
 
 venues = Ticketfly::Venues.get_all
 
