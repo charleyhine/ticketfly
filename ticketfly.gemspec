@@ -5,12 +5,12 @@
 
 Gem::Specification.new do |s|
   s.name = "ticketfly"
-  s.version = "0.2.0"
+  s.version = "0.2.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Charley Hine"]
   s.date = "2012-02-12"
-  s.description = "A ruby gem to more easily consume the Ticketfly event and venue API."
+  s.description = "A ruby implementation of the Ticketfly event and venue API."
   s.email = "charles.hine@gmail.com"
   s.extra_rdoc_files = [
     "LICENSE.txt",
@@ -33,7 +33,7 @@ Gem::Specification.new do |s|
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
   s.rubygems_version = "1.8.10"
-  s.summary = "Summary here"
+  s.summary = "A ruby implementation of the Ticketfly event and venue API."
 
   if s.respond_to? :specification_version then
     s.specification_version = 3
