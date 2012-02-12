@@ -2,17 +2,23 @@
 
 A ruby implementation of the Ticketfly event and venue API.
 
-== Contributing to ticketfly
- 
-* Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet.
-* Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it.
-* Fork the project.
-* Start a feature/bugfix branch.
-* Commit and push until you are happy with your contribution.
-* Make sure to add tests for it. This is important so I don't break it in a future version unintentionally.
-* Please try not to mess with the Rakefile, version, or history. If you want to have your own version, or is otherwise necessary, that is fine, but please isolate to its own commit so I can cherry-pick around it.
+== usage
 
-== Copyright
+* simple consumption
+venues = Ticketfly::Venues.get_all
+events = Ticketfly::Events.get_by_venue_id(venues.third.id)
+artist = events.first.headliners.first
+
+* event searching
+events = Ticketfly::Events.search('SEARCH_STRING')       <- artist name or city string 
+venue = events.first.venue
+
+== coming soon
+ 
+* purchase API
+* artist database
+
+== copyright
 
 Copyright (c) 2012 Charley Hine. See LICENSE.txt for
 further details.

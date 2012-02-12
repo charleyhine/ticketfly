@@ -22,6 +22,10 @@ module Ticketfly
       venue.json = json
       venue
     end
+    
+    def next_event
+      Events.get_next_by_venue_id(self.id)
+    end
   end
   
   class Headliner
@@ -36,10 +40,9 @@ module Ticketfly
   end
 
   class Event
-    attr_accessor :id, :name, :venue, :org, :date, :json, :headliners
+    attr_accessor :id, :name, :venue, :org, :date, :json
     def self.build(json)
       event = Event.new
-      event.headliners = []
       event.id = json['id']
       event.name = json['name']
       event.json = json
@@ -47,6 +50,14 @@ module Ticketfly
       event.org = Org.build(json['org'])
       event.date = json['startDate']
       event
+    end
+    
+    def headliners
+      headliners = []
+      self.json['headliners'].each do |h|
+        headliners << Headliner.build(h)
+      end
+      headliners
     end
   end
 
@@ -58,7 +69,7 @@ module Ticketfly
       Event.build(result['events'].first)
     end
     
-    def self.get_next_event_by_venue_id(venue_id)
+    def self.get_next_by_venue_id(venue_id)
       base_uri = "http://www.ticketfly.com/api/events/upcoming.json"
       max_results = 1
       result = JSON.parse(open(base_uri + "?venueId=" + venue_id.to_s).read)
@@ -90,7 +101,7 @@ module Ticketfly
       total_pages = 1
       page = 1
       begin
-        result = JSON.parse(open(base_uri + "?q=" + query.to_s).read)
+        result = JSON.parse(open(base_uri + "?orgId=1&q=" + query.to_s).read)
         total_pages = result["totalPages"]
         result['events'].each do |e|
           event = Event.build(e)
