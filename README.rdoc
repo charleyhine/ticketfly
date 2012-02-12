@@ -7,9 +7,9 @@ gem 'ticketfly'
 
 venues = Ticketfly::Venues.get_all
 
-events = Ticketfly::Events.get_by_venue_id(venues.third.id)
+venue_events = venues.third.events
 
-artist = events.first.headliners.first
+next_headliner = venue_events.first.headliners.first.name
 
 == event searching
 

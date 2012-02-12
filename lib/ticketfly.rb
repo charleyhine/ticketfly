@@ -23,6 +23,10 @@ module Ticketfly
       venue
     end
     
+    def events
+      Events.get_by_venue_id(self.id)
+    end
+    
     def next_event
       Events.get_next_by_venue_id(self.id)
     end
