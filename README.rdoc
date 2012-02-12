@@ -1,16 +1,13 @@
-=begin
 = ticketfly
 
 A ruby implementation of the Ticketfly event and venue API.
 
 == usage
 
-<b>simple consumption</b>
 venues = Ticketfly::Venues.get_all
 events = Ticketfly::Events.get_by_venue_id(venues.third.id)
 artist = events.first.headliners.first
 
-<b>event searching</b>
 events = Ticketfly::Events.search('SEARCH_STRING')       <- artist name or city string 
 venue = events.first.venue
 
@@ -23,4 +20,3 @@ venue = events.first.venue
 
 Copyright (c) 2012 Charley Hine. See LICENSE.txt for
 further details.
-=end
