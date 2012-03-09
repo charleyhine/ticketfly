@@ -3,19 +3,19 @@
 A ruby implementation of the Ticketfly event and venue API.
 
 == simple consumption
-gem 'ticketfly'
+ gem 'ticketfly'
 
-venues = Ticketfly::Venues.get_all
+ venues = Ticketfly::Venues.get_all
 
-venue_events = venues.third.events
+ venue_events = venues.third.events
 
-next_headliner = venue_events.first.headliners.first.name
+ next_headliner = venue_events.first.headliners.first.name
 
 == event searching
 
-events = Ticketfly::Events.search('SEARCH_STRING')       <- artist name or city string 
+ events = Ticketfly::Events.search('SEARCH_STRING')       <- artist name or city string 
 
-venue = events.first.venue
+ venue = events.first.venue
 
 == coming soon
  
