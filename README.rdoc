@@ -7,7 +7,7 @@ A ruby implementation of the Ticketfly event and venue API.
 
  venues = Ticketfly::Venues.get_all
 
- venue_events = venues.third.events
+ venue_events = venues.first.events
 
  next_headliner = venue_events.first.headliners.first.name
 
